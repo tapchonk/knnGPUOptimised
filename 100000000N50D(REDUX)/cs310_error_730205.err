@@ -1,0 +1,1 @@
+Kokkos::Cuda::initialize WARNING: running kernels compiled for compute capability 8.0 on device with compute capability 8.6 , this will likely reduce potential performance.

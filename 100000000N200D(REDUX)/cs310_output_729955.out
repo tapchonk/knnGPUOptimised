@@ -1,0 +1,76 @@
+===== ENVIRONMENT =====
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              96
+On-line CPU(s) list: 0-95
+Thread(s) per core:  2
+Core(s) per socket:  24
+Socket(s):           2
+NUMA node(s):        2
+Vendor ID:           AuthenticAMD
+CPU family:          25
+Model:               1
+Model name:          AMD EPYC 7443 24-Core Processor
+Stepping:            1
+CPU MHz:             2850.000
+CPU max MHz:         4035.6440
+CPU min MHz:         1500.0000
+BogoMIPS:            5688.85
+Virtualization:      AMD-V
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            512K
+L3 cache:            32768K
+NUMA node0 CPU(s):   0-23,48-71
+NUMA node1 CPU(s):   24-47,72-95
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 invpcid_single hw_pstate ssbd mba ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 invpcid cqm rdt_a rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local clzero irperf xsaveerptr wbnoinvd amd_ppin brs arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload vgif v_spec_ctrl umip pku ospke vaes vpclmulqdq rdpid overflow_recov succor smca
+
+===== COMPILING Makefile IN /dcs/21/u2145461/cs310/knnGPU =====
+
+===== RUNNING ./knnGPUOptimised.cuda -N 100000000 -D 200 -K 100 -C 20 -NC 10 =====
+  User N is 100000000
+  User D is 200
+  User K is 100
+  User C is 20
+  User NC is 10
+
+================================================================================
+Number of Threads is : 48.
+
+================================================================================
+Free GPU Memory is : 23354933248 (bytes).
+Total Memory usage is : 104800016120 (bytes).
+Total GPU Memory usage is : 17200016000 (bytes before N-Dimensional allocation).
+
+================================================================================
+WARNING: Application memory usage is larger than total GPU memory available.
+Partitioning workload amongst 13 partitions.
+
+||============================RESULTS============================||
+||Initialisation Time:                                131.649892 ||
+||N-Dimensional Euclid Time:                          7.119099   ||
+||Sort Time:                                          1.363133   ||
+||Total Time:                                         140.132125 ||
+||============================RESULTS============================||
+||Data Point Set 0:                                     8        ||
+||Data Point Set 1:                                     7        ||
+||Data Point Set 2:                                     6        ||
+||Data Point Set 3:                                     0        ||
+||Data Point Set 4:                                     3        ||
+||Data Point Set 5:                                     2        ||
+||Data Point Set 6:                                     4        ||
+||Data Point Set 7:                                     2        ||
+||Data Point Set 8:                                     1        ||
+||Data Point Set 9:                                     1        ||
+||Data Point Set 10:                                    3        ||
+||Data Point Set 11:                                    6        ||
+||Data Point Set 12:                                    4        ||
+||Data Point Set 13:                                    4        ||
+||Data Point Set 14:                                    1        ||
+||Data Point Set 15:                                    0        ||
+||Data Point Set 16:                                    5        ||
+||Data Point Set 17:                                    1        ||
+||Data Point Set 18:                                    3        ||
+||Data Point Set 19:                                    3        ||
+||============================RESULTS============================||
