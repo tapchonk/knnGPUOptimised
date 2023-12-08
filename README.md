@@ -1,4 +1,4 @@
-/*
+ *
  * ************************************************************************
  *
  *                        Kokkos v. 4.0
@@ -11,7 +11,7 @@
  * Part of Kokkos, under the Apache License v2.0 with LLVM Exceptions.
  * See https://kokkos.org/LICENSE for license information.
  * SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
- */
+ *
  
 
  # Kokkos Optimized KNN Algorithm
