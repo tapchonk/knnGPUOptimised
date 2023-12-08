@@ -14,10 +14,10 @@
  *
  
 
- # Kokkos Optimized KNN Algorithm
+ # Kokkos Optimised KNN Algorithm
  
  This algorithm implements the K-nearest neighbors (KNN) algorithm using Kokkos, a programming model for performance portability. 
- It is optimized for both Nvidia GPUs and CPUs using OpenMP.
+ It is optimised for both Nvidia GPUs and CPUs using OpenMP.
  
  To run the algorithm, follow these steps:
  
