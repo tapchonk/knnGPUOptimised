@@ -27,16 +27,14 @@ echo "#!/bin/sh
 
 #SBATCH --job-name=$( whoami )-$1
 #SBATCH --partition=gecko  
-#SBATCH --cpus-per-task=32
-#SBATCH --mem-per-cpu=4G
-#SBATCH --gres=gpu:1
-#SBATCH --time=20:00
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=128GB
+#SBATCH --time=60:00
 #SBATCH --output=%j/cs310_output_%j.out
 #SBATCH --error=%j/cs310_error_%j.err
 echo ===== ENVIRONMENT =====
 . /etc/profile.d/modules.sh
 module load gcc9
-module load cuda11.2
 
 lscpu
 #############################################################################
@@ -48,14 +46,8 @@ echo
 
 if [ -f "Makefile" ]; then
 	echo "echo ===== COMPILING Makefile IN $( pwd ) =====
-
-export OMP_NUM_THREADS=32
-export OMP_PROC_BIND=spread
-export OMP_PLACES=threads
-
 make clean
-make -j KOKKOS_DEVICES=Cuda
-
+make
 
 echo
 " >> tmp

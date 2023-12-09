@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
-project(KNNGPUOptimised)
+project(KNNOriginal)
 include(../../common.cmake)
 
-add_executable(knnGPUOptimised knnGPUOptimised.cpp)
-target_link_libraries(knnGPUOptimised Kokkos::kokkos)
+add_executable(knnOriginal knnOriginal.cpp)
+target_link_libraries(knnOriginal Kokkos::kokkos)

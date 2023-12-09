@@ -1,6 +1,6 @@
 KOKKOS_PATH = ${HOME}/kokkos-master
-KOKKOS_DEVICES = "Cuda,OpenMP"
-EXE_NAME = "knnGPUOptimised"
+KOKKOS_DEVICES = "OpenMP"
+EXE_NAME = "knnOriginal"
 
 SRC = $(wildcard *.cpp)
 
@@ -9,21 +9,17 @@ default: build
 
 
 ifneq (,$(findstring Cuda,$(KOKKOS_DEVICES)))
-CXX_LIST = initialiseArrays.cpp knnGPUOptimised.cpp nDimensionalEuclid.cpp
-CXXFLAGS += -DUSING_THRUST
 CXX = ${KOKKOS_PATH}/bin/nvcc_wrapper
 EXE = ${EXE_NAME}.cuda
-KOKKOS_ARCH = "Ampere80"
+KOKKOS_ARCH = "Volta70"
 KOKKOS_CUDA_OPTIONS = "enable_lambda"
-
 else
-CXX_LIST = initialiseArrays.cpp knnGPUOptimised.cpp parallelisedMergeSort.cpp nDimensionalEuclid.cpp
 CXX = g++
 EXE = ${EXE_NAME}.host
 KOKKOS_ARCH = "BDW"
 endif
 
-CXXFLAGS += -O3
+CXXFLAGS = -O3
 LINK = ${CXX}
 LINKFLAGS =
 
