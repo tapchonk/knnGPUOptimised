@@ -21,7 +21,7 @@
  
  To run the algorithm, follow these steps:
  
- ## 1. Install CUDA 11.2 and GCC 9.2.0 on your system.
+ ## 1. Install CUDA 11.2, GCC 9.2.0 and OpenMP 5.0/4.0 on your system.
  
  ## 2. Clone the Kokkos GitHub repository by executing the following command in your terminal:
     ```
@@ -54,6 +54,8 @@
  ## 6. To run the application on a batch compute system, prepend `./remoterun.sh` to the above commands.
     Ensure that the script has been updated for the batch compute and for that partition.
     Also ensure that you specify if you want the Cuda-optimised version or the OpenMP-optimised version in the remote run script.
+    As a final check, look at the architecture for the GPU you're optimising for in the Makefile.
+    Currently it's Ampere80.
  
  For more information and updates, please visit the Kokkos GitHub repository: [kokkos/kokkos](https://github.com/kokkos/kokkos)
 
