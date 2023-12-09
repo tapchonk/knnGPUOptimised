@@ -54,7 +54,7 @@ void nDimensionalEuclid(  NDimensionalSpaceView nDimensionalSpace, QueryPointVie
         #endif
         //repeat for each query point we would like to classify
         for (long long repeats = 0; repeats < C; repeats++) {
-            //note to self: loop unrolling does nothing
+            //note to self: loop unrolling does nothing in this case as vectorisation is achieved implcitly as "warps" on GPUs
             Kokkos::parallel_for( "n_dimensional_euclid_calc",  current_range_policy(0, N), KOKKOS_LAMBDA (long long i) {
                 float diff = 0.0f;
                 float diffSquare = 0.0f;
