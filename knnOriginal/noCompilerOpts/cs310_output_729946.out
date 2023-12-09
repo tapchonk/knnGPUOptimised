@@ -1,0 +1,94 @@
+===== ENVIRONMENT =====
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              96
+On-line CPU(s) list: 0-95
+Thread(s) per core:  2
+Core(s) per socket:  24
+Socket(s):           2
+NUMA node(s):        2
+Vendor ID:           AuthenticAMD
+CPU family:          25
+Model:               1
+Model name:          AMD EPYC 7443 24-Core Processor
+Stepping:            1
+CPU MHz:             3672.771
+CPU max MHz:         4035.6440
+CPU min MHz:         1500.0000
+BogoMIPS:            5688.85
+Virtualization:      AMD-V
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            512K
+L3 cache:            32768K
+NUMA node0 CPU(s):   0-23,48-71
+NUMA node1 CPU(s):   24-47,72-95
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 invpcid_single hw_pstate ssbd mba ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 invpcid cqm rdt_a rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local clzero irperf xsaveerptr wbnoinvd amd_ppin brs arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload vgif v_spec_ctrl umip pku ospke vaes vpclmulqdq rdpid overflow_recov succor smca
+
+===== COMPILING Makefile IN /dcs/21/u2145461/cs310/knnOriginal =====
+rm -f Kokkos_HostSpace_deepcopy.o Kokkos_ExecPolicy.o Kokkos_HostThreadTeam.o Kokkos_CPUDiscovery.o Kokkos_MemorySpace.o Kokkos_SharedAlloc.o Kokkos_Command_Line_Parsing.o Kokkos_HostBarrier.o Kokkos_MemoryPool.o Kokkos_hwloc.o Kokkos_Core.o Kokkos_Spinwait.o Kokkos_Error.o Kokkos_Stacktrace.o Kokkos_Profiling.o Kokkos_HostSpace.o Kokkos_UnorderedMap_impl.o Kokkos_OpenMP_Task.o Kokkos_OpenMP.o Kokkos_OpenMP_Instance.o desul/atomics/Config.hpp Desul_Config.tmp KokkosCore_config.h KokkosCore_config.tmp libkokkos.a KokkosCore_Config_SetupBackend.hpp \
+KokkosCore_Config_FwdBackend.hpp KokkosCore_Config_DeclareBackend.hpp KokkosCore_Config_DeclareBackend.tmp \
+        KokkosCore_Config_FwdBackend.tmp KokkosCore_Config_PostInclude.hpp KokkosCore_Config_PostInclude.tmp KokkosCore_Config_SetupBackend.tmp
+rm -f *.o *.cuda *.host
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include   -c knnOriginal.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_HostSpace_deepcopy.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_ExecPolicy.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_HostThreadTeam.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_CPUDiscovery.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_MemorySpace.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_SharedAlloc.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_Command_Line_Parsing.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_HostBarrier.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_MemoryPool.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_hwloc.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_Core.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_Spinwait.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_Error.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_Stacktrace.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_Profiling.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/impl/Kokkos_HostSpace.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/containers/src/impl/Kokkos_UnorderedMap_impl.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/OpenMP/Kokkos_OpenMP_Task.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/OpenMP/Kokkos_OpenMP.cpp
+g++ -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include -std=c++17 -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -I./ -I/dcs/21/u2145461/kokkos-master/core/src -I/dcs/21/u2145461/kokkos-master/containers/src -I/dcs/21/u2145461/kokkos-master/algorithms/src -I/dcs/21/u2145461/kokkos-master/tpls/desul/include -I/dcs/21/u2145461/kokkos-master/tpls/mdspan/include  -c /dcs/21/u2145461/kokkos-master/core/src/OpenMP/Kokkos_OpenMP_Instance.cpp
+ar cr libkokkos.a Kokkos_HostSpace_deepcopy.o Kokkos_ExecPolicy.o Kokkos_HostThreadTeam.o Kokkos_CPUDiscovery.o Kokkos_MemorySpace.o Kokkos_SharedAlloc.o Kokkos_Command_Line_Parsing.o Kokkos_HostBarrier.o Kokkos_MemoryPool.o Kokkos_hwloc.o Kokkos_Core.o Kokkos_Spinwait.o Kokkos_Error.o Kokkos_Stacktrace.o Kokkos_Profiling.o Kokkos_HostSpace.o Kokkos_UnorderedMap_impl.o Kokkos_OpenMP_Task.o Kokkos_OpenMP.o Kokkos_OpenMP_Instance.o
+ranlib libkokkos.a
+g++ -march=core-avx2 -mtune=core-avx2 -mrtm -fopenmp -L/dcs/21/u2145461/cs310/knnOriginal   knnOriginal.o -lkokkos -ldl  -o "knnOriginal".host
+echo "Start Build"
+Start Build
+
+===== RUNNING ./knnOriginal.host -N 100000000 -D 200 -K 100 -C 20 -NC 10 =====
+  User N is 100000000
+  User D is 200
+  User K is 100
+  User C is 20
+  User NC is 10
+
+||============================RESULTS============================||
+||Initialisation Time:                                147.284366 ||
+||N-Dimensional Euclid Time:                          966.298304 ||
+||Merge Sort Time:                                    468.083608 ||
+||Total Time:                                         1581.666278||
+||============================RESULTS============================||
+||Data Point Set 0:                                     8        ||
+||Data Point Set 1:                                     7        ||
+||Data Point Set 2:                                     6        ||
+||Data Point Set 3:                                     0        ||
+||Data Point Set 4:                                     3        ||
+||Data Point Set 5:                                     2        ||
+||Data Point Set 6:                                     4        ||
+||Data Point Set 7:                                     2        ||
+||Data Point Set 8:                                     1        ||
+||Data Point Set 9:                                     1        ||
+||Data Point Set 10:                                     3       ||
+||Data Point Set 11:                                     6       ||
+||Data Point Set 12:                                     4       ||
+||Data Point Set 13:                                     4       ||
+||Data Point Set 14:                                     1       ||
+||Data Point Set 15:                                     0       ||
+||Data Point Set 16:                                     5       ||
+||Data Point Set 17:                                     1       ||
+||Data Point Set 18:                                     3       ||
+||Data Point Set 19:                                     3       ||
+||============================RESULTS============================||
