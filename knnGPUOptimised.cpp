@@ -161,7 +161,7 @@ int main( int argc, char* argv[] )
     if (totalFreeGPUMem < spaceTotal) {
       //spaceTotal = (N/partitions)*D + spaceTotal;
       fprintf(stdout, "WARNING: Application memory usage is larger than total GPU memory available.\nPartitioning workload amongst %d partitions.\n", partitions);
-    } else {
+    } else if (partitions == 1) {
       partitionD = D;
     }
   #endif
@@ -270,7 +270,7 @@ int main( int argc, char* argv[] )
       auto distanceSub = Kokkos::subview(distances,  repeats, Kokkos::ALL());
       auto classifierSub = Kokkos::subview(classifierGPU, repeats, Kokkos::ALL());
       //utilise thrust sort by key to sort the classifier array using the distance as a key
-      thrust::sort_by_key(thrust::device, distanceSub.data(), distanceSub.data() + N, classifierSub.data());
+      thrust::stable_sort_by_key(thrust::device, distanceSub.data(), distanceSub.data() + N, classifierSub.data());
     }
     Kokkos::deep_copy(classifier, classifierGPU);
   #endif 
