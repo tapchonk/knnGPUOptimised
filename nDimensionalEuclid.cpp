@@ -37,13 +37,16 @@
 void nDimensionalEuclid(  NDimensionalSpaceView nDimensionalSpace, QueryPointView queryPoint, DistanceView distances, NDimensionalPartitionView nDimensionalPartition,
                           long long N, long long D, long long C, long long partitions, long long partitionD ) {
     //Defines the range policy for the parallel for loops, the execution space is defined at the top of the file dependent on Kokkos device configuration        
-    using current_range_policy = Kokkos::RangePolicy<CurrentExecutionSpace, Kokkos::Schedule<Kokkos::Static>>;
+    using current_range_policy = Kokkos::RangePolicy<CurrentExecutionSpace, Kokkos::Schedule<Kokkos::Dynamic>>;
     
     for (long long workloadPartitioning = 0; workloadPartitioning < partitions; workloadPartitioning++) {
         long long endIndex  = partitionD;
         long long toAdd = workloadPartitioning * partitionD;
         if (workloadPartitioning == (partitions - 1) && D % partitionD != 0) {
             endIndex = D % partitionD;
+        }
+        if (D < partitionD) {
+            endIndex = D;
         }
         //if the GPU doesn't have enough memory to store the entire n-dimensional space, we need to copy the partition to the GPU for every iteration of the workload loop
         #ifdef KOKKOS_ENABLE_CUDA
@@ -54,7 +57,7 @@ void nDimensionalEuclid(  NDimensionalSpaceView nDimensionalSpace, QueryPointVie
         #endif
         //repeat for each query point we would like to classify
         for (long long repeats = 0; repeats < C; repeats++) {
-            //note to self: loop unrolling does nothing in this case as vectorisation is achieved implcitly as "warps" on GPUs
+            //note to self: loop unrolling does nothing
             Kokkos::parallel_for( "n_dimensional_euclid_calc",  current_range_policy(0, N), KOKKOS_LAMBDA (long long i) {
                 float diff = 0.0f;
                 float diffSquare = 0.0f;
