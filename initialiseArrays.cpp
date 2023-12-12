@@ -29,9 +29,9 @@ void initialiseArrays(  NDimensionalSpaceView nDimensionalSpace, HostQueryPointV
 
   srand(42); //Seed the random number generator for consistent results
 
-  for (int repeats = 0; repeats < C; ++repeats) {
+  for (int repeats = 0; repeats < C; repeats++) {
     //Generate a random set of points to query
-    for (int i = 0; i < D; ++i) {
+    for (int i = 0; i < D; i++) {
       h_queryPointHost(repeats, i) = ((float) rand() / (RAND_MAX)) * 2000.0f - 1000.0f;
     }
   }
@@ -43,6 +43,9 @@ void initialiseArrays(  NDimensionalSpaceView nDimensionalSpace, HostQueryPointV
     if ((partition == partitions - 1) && (partitions > 1)) {
       part = D % partitionD;
     }
+    if (D < partitionD) {
+      part = D;
+    }
     for (long long i = 0; i < part; i++) {
       for (long long j = 0; j < N; j++) {
         nDimensionalSpace(partition, i, j) = ((float) rand() / (RAND_MAX)) * 2000.0f - 1000.0f;
@@ -52,21 +55,21 @@ void initialiseArrays(  NDimensionalSpaceView nDimensionalSpace, HostQueryPointV
 
   //Fill array with random integers between 0 and NC to represent our "classes"
 
-  for (int i = 0; i < N; ++i) {
+  for (int i = 0; i < N; i++) {
     h_classifierHost( 0, i ) = ((int) rand() % NC);
   }
 
   //Repeat this copy for each set of data we want to classify
 
-  for (int repeats = 1; repeats < C; ++repeats) {
-    for (int i = 0; i < N; ++i) {
+  for (int repeats = 1; repeats < C; repeats++) {
+    for (int i = 0; i < N; i++) {
       h_classifierHost(repeats, i) = h_classifierHost(0, i);
     }
   }
 
   //Set all distances to be sorted to 0.0f
 
-  for (int repeats = 0; repeats < C; ++repeats) {
+  for (int repeats = 0; repeats < C; repeats++) {
     for (int i = 0; i < N; i++) {
       h_distancesHost(repeats, i) = 0.0f;
     }
