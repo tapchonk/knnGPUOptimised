@@ -2,6 +2,9 @@
 
 ![Alt text](https://media.discordapp.net/attachments/891721126340853761/1390293555184140329/Screenshot_2025-07-03_123000.png?ex=6867bb45&is=686669c5&hm=e9394c6ba59afa43ee09ab08e615d31fd56c72655d8dd7d21868a90d6a23fa2f&=&format=webp&quality=lossless "Visualisation of KNN")
 
+A simple visualisation of the KNN algorithm on a 3D dataset. Each point in space represents a different sample to be classified whilst the colour denotes the class of the datapoint.
+Points connected by a line are used to represent the K-Nearest points to the point we are currently trying to classify.
+
  * ************************************************************************
  *
  *                        Kokkos v. 4.0
