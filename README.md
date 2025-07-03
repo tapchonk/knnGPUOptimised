@@ -1,6 +1,6 @@
 # K-Nearest Neighbours Visualisation
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1390103973087936732/a4neggem.png?ex=68670ab6&is=6865b936&hm=a51dddabd24a854cf009f0ba0ffcc1ce27228047b06c1f82c8c57dcb3045855b&=&format=webp&quality=lossless&width=1280&height=960](https://media.discordapp.net/attachments/891721126340853761/1390293555184140329/Screenshot_2025-07-03_123000.png?ex=6867bb45&is=686669c5&hm=e9394c6ba59afa43ee09ab08e615d31fd56c72655d8dd7d21868a90d6a23fa2f&=&format=webp&quality=lossless "Visualisation of KNN")
+![Alt text](https://media.discordapp.net/attachments/891721126340853761/1390293555184140329/Screenshot_2025-07-03_123000.png?ex=6867bb45&is=686669c5&hm=e9394c6ba59afa43ee09ab08e615d31fd56c72655d8dd7d21868a90d6a23fa2f&=&format=webp&quality=lossless "Visualisation of KNN")
 
  * ************************************************************************
  *
